@@ -15,8 +15,8 @@ core |
 ## Start server
 
 core |
----
-`server.listen(PORT)`
+--- |
+`server.listen(PORT)` |
 
 ## Close connection
 
