@@ -2,9 +2,9 @@
 
 ## Dependencies
 
-core | 
----|
-`require("http")`
+| core | 
+|---|
+|`require("http")`|
 
 ## Create server
 
