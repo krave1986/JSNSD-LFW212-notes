@@ -9,8 +9,8 @@
 ## Create server
 
 core |
----
-`http.createServer((req, res) => {})`
+--- |
+`http.createServer((req, res) => {})` |
 
 ## Start server
 
