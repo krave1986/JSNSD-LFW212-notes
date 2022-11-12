@@ -8,4 +8,4 @@
 
 - Return value
 
-  ![](images/returned_by_url_parse.png)
+  ![](../images/returned_by_url_parse.png)

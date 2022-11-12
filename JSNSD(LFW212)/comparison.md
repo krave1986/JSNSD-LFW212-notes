@@ -36,3 +36,15 @@ core |
 --- |
 `res.statusCode = 405` |
 
+## Get request verb
+
+core |
+--- |
+`req.method` |
+
+## Write to the stream
+
+core |
+--- |
+`res.end('abc\r\n')` |
+
