@@ -48,7 +48,7 @@ core |
 --- |
 `res.end('abc\r\n')` |
 
-## Default status code
+## Default status code of response
 
 core |
 --- |
