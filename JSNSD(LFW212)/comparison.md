@@ -48,3 +48,8 @@ core |
 --- |
 `res.end('abc\r\n')` |
 
+## Default status code
+
+core |
+--- |
+`200` |

@@ -1,5 +1,7 @@
 # url
 
+这个模块因为安全问题，被建议用 WHATWG URL API 进行替代
+
 ## Methods
 
 ### url.parse()

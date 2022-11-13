@@ -43,6 +43,9 @@
         - url
 
           The `"/hello"` in `http://localhost:3000/hello`
+          It is the part which is started by a single slash in the URL.
+
+          Pass it into `url.parse()` is to eliminate any query strings. For example: `?foo=1` in `/hello?foo=1`. So that the object returned by `url.parse()` will have a `pathname` property which is `"/hello"` only.
 
         - method
 
