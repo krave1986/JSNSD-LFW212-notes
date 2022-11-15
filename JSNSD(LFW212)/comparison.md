@@ -53,3 +53,9 @@ core |
 core |
 --- |
 `200` |
+
+## Project structure
+
+core | express |
+--- | --- |
+as you wish | ![](../images/structureOfExpress.png)
