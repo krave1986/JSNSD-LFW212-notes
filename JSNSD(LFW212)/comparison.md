@@ -2,9 +2,10 @@
 
 ## Dependencies
 
-| core | 
-|---|
-|`require("http")`|
+| core | express
+|---| --- |
+|http module: `require("http")`| express: `express@4` |
+| | error: `http-errors@2` |
 
 ## Create server
 
