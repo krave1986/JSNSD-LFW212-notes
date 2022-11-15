@@ -60,3 +60,9 @@ core |
 core | express |
 --- | --- |
 as you wish | ![](../images/structureOfExpress.png)
+
+## Chores
+
+core | express |
+--- | --- |
+everything | `scripts`: `"start": "node ./bin/www"` |
