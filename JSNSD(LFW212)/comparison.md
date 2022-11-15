@@ -6,6 +6,7 @@
 |---| --- |
 |http module: `require("http")`| express: `express@4` |
 | | error: `http-errors@2` |
+| | express module: `require("express")` |
 
 ## Create server
 
@@ -21,9 +22,9 @@ core |
 
 ## Close connection
 
-core |
---- |
-`res.end(string)`|
+core | express |
+--- | --- |
+`res.end(string)`| NA |
 
 ## Set header
 
@@ -33,27 +34,33 @@ core |
 
 ## Set status code
 
-core |
---- |
-`res.statusCode = 405` |
+core | express |
+--- | --- |
+`res.statusCode = 405` | `res.status(code_number)` |
 
 ## Get request verb
 
-core |
---- |
-`req.method` |
+core | express |
+--- | --- |
+`req.method` | `req.method` |
 
 ## Write to the stream
 
-core |
---- |
-`res.end('abc\r\n')` |
+core | express |
+--- | --- |
+`res.end('abc\r\n')` | `res.send("message")` |
 
 ## Default status code of response
 
 core |
 --- |
 `200` |
+
+## Get error message
+
+core | express |
+--- | --- |
+`http.STATUS_CODES[code_number]` | `http-errors.createError(code_number).message` |
 
 ## Project structure
 
