@@ -18,7 +18,7 @@
 
 `app` will be exported to `bin/www` and passed to `http.createServer()` as a callback. This callback take `req` and `res` objects as arguments.
 
-### `app` returned by `express()`
+### The `app` returned by `express()`
 #### Methods
 
 - `app.use(callback)`
@@ -40,9 +40,15 @@ Configure express servers' behavior.
 
       If `next()` function not called, processing of the request is finished. The following middleware functions will not be called for this request.
 
+- `app.use(path, router)`
+
+  This version of `use()` will mount routes of `router` on the specified `path`.
+
 ## Methods
 
 - `express.Router`
+
+  Instances of `express.Router` are also middleware functions.
 
   - Create router:
   ```javascript
@@ -53,7 +59,16 @@ Configure express servers' behavior.
 
   #### Methods
   
-  ##### `router.get(path, (req, res) => {})`
+  ##### `router.get(path, middleware_function)`
+
+  This method defines a GET route.
+  Most of the time, we use `/` as the `path` argument.
+  The effective path is set in `app.js` when we mount the router.
+
+  #### Exports
+  ```javascript
+  module.exports = router
+  ```
 
 ## The last two middleware functions
 
