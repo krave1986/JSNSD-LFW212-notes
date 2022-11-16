@@ -53,6 +53,23 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
 
 - `fasitfy.register(plugin, options)`
 
+- `fastify.get(path, handler)`
+
+  - `handler` => `(request, reply) => {}`
+    The handler of the route.
+    It is not a plugin.
+    It could be both synchronous or asynchronous.
+    Its returned value will be automatically processed simlar to Express and sent as the content of HTTP response.
+
+    If this handler returns an object, fastify will convert it into a JSON payload.
+
+    - `reply`
+
+      #### Methods
+
+      - `reply.send()`
+        Instead of return something within the route handler, you can use this method to send response. For example: `reply.send({root: true})`.
+        
 ## Files
 
 - app.js
@@ -65,6 +82,10 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
       This file exports an async function which accepts `fastify` instance and an options object as argument. So it also exports a plugin function.
 
       It calls `fastify.get()` to register an HTTP GET route.
+
+    - example
+
+      - index.js
 
 ## `fastify-cli`
 

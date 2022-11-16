@@ -24,7 +24,7 @@ core |
 
 core | express | fastify
 --- | --- | ---
-Code logic | `app.use(path, routes)` | `fastify.get(path, handler)`
+Code logic | `app.use(path, routes)` | the part after `routes/` in `__dirname` of the route
 
 ## Close connection
 
@@ -34,9 +34,9 @@ core | express |
 
 ## Set header
 
-core |
---- |
-`res.setHeader('Content-Type', 'text/html')` |
+core | express | fastify
+--- | --- | ---
+`res.setHeader('Content-Type', 'text/html')` | | `reply.type('text/html')`
 
 ## Set status code
 
@@ -52,9 +52,9 @@ core | express |
 
 ## Write to the stream
 
-core | express |
---- | --- |
-`res.end('abc\r\n')` | `res.send("message")` |
+core | express | fastify
+--- | --- | ---
+`res.end('abc\r\n')` | `res.send("message")` | return from route handler or `reply.send()`
 
 ## Default status code of response
 

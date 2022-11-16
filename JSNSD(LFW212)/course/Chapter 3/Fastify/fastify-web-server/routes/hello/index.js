@@ -1,6 +1,6 @@
 'use strict'
 
-const root = `
+const hello = `
 <html>
   <head>
     <style>
@@ -8,15 +8,14 @@ const root = `
         background: #333;
         margin: 1.25rem;
       }
-      a {
-        color: yellow;
-        font-size: 2rem;
+      h1 {
+        color: #EEE;
         font-family: sans-serif;
       }
     </style>
   </head>
   <body>
-    <a href='/hello'>Hello</a>
+      <h1>Hello World</h1>
   </body>
 </html>
 `
@@ -24,6 +23,6 @@ const root = `
 module.exports = async function (fastify, opts) {
   fastify.get('/', async function (request, reply) {
     reply.type('text/html')
-    return root
+    return hello
   })
 }
