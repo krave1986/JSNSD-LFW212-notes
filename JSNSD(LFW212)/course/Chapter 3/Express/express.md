@@ -18,7 +18,8 @@
 
 `app` will be exported to `bin/www` and passed to `http.createServer()` as a callback. This callback take `req` and `res` objects as arguments.
 
-### Methods
+### `app` returned by `express()`
+#### Methods
 
 - `app.use(callback)`
 
@@ -39,6 +40,20 @@ Configure express servers' behavior.
 
       If `next()` function not called, processing of the request is finished. The following middleware functions will not be called for this request.
 
+## Methods
+
+- `express.Router`
+
+  - Create router:
+  ```javascript
+  const router = Router()
+  ```
+
+  ### router
+
+  #### Methods
+  
+  ##### `router.get(path, (req, res) => {})`
 
 ## The last two middleware functions
 
