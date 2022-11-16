@@ -64,9 +64,9 @@ core | express |
 
 ## Project structure
 
-core | express |
---- | --- |
-as you wish | ![](../images/structureOfExpress.png)
+core | express | fastify |
+--- | --- | --- |
+as you wish | ![](../images/structureOfExpress.png) | ![](../images/structureOfFastify.png) |
 
 ## Chores
 
