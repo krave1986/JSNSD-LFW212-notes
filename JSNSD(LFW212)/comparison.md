@@ -20,6 +20,12 @@ core |
 --- |
 `server.listen(PORT)` |
 
+## Set path for routes
+
+core | express | fastify
+--- | --- | ---
+Code logic | `app.use(path, routes)` | `fastify.get(path, handler)`
+
 ## Close connection
 
 core | express |

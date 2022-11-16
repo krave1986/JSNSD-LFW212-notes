@@ -59,7 +59,12 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
 
   Entry point of the whole fastify project. It exports an async function which is also a plugin. `fastify-autoload` plugin is registered twice here.
 
-  -
+  - routes
+
+    - root.js
+      This file exports an async function which accepts `fastify` instance and an options object as argument. So it also exports a plugin function.
+
+      It calls `fastify.get()` to register an HTTP GET route.
 
 ## `fastify-cli`
 
