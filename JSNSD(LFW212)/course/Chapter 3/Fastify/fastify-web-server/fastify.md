@@ -59,6 +59,8 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
 
   Entry point of the whole fastify project. It exports an async function which is also a plugin. `fastify-autoload` plugin is registered twice here.
 
+  -
+
 ## `fastify-cli`
 
 ### Flags
