@@ -69,7 +69,8 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
 
       - `reply.send()`
         Instead of return something within the route handler, you can use this method to send response. For example: `reply.send({root: true})`.
-        
+
+- `fastify.setNotFoundHandler((request, reply)=>{})`
 ## Files
 
 - app.js

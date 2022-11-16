@@ -2,9 +2,9 @@
 
 ## Dependencies
 
-| core | express
-|---| --- |
-|http module: `require("http")`| express: `express@4` |
+| core | express | fastify
+|---| --- | ---
+|http module: `require("http")`| express: `express@4` | fastify: `npm init fastify`
 | | error: `http-errors@2` |
 | | express module: `require("express")` |
 
@@ -40,9 +40,9 @@ core | express | fastify
 
 ## Set status code
 
-core | express |
---- | --- |
-`res.statusCode = 405` | `res.status(code_number)` |
+core | express | fastify
+--- | --- | ---
+`res.statusCode = 405` | `res.status(code_number)` | `reply.status(code_number)`
 
 ## Get request verb
 
@@ -64,9 +64,15 @@ core |
 
 ## Get error message
 
-core | express |
---- | --- |
-`http.STATUS_CODES[code_number]` | `http-errors.createError(code_number).message` |
+core | express | fastify
+--- | --- | ---
+`http.STATUS_CODES[code_number]` | `http-errors.createError(code_number).message` | return plain text
+
+## Error handling
+
+core | express | fastify
+--- | --- | ---
+manually set `statusCode` and message | last two middleware | `fastify.setNotFoundHandler((request, reply)=>{})`
 
 ## Project structure
 
