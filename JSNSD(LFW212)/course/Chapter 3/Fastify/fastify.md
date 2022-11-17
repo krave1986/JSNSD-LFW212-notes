@@ -100,3 +100,7 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
 
   - `-P`
     Prettify the log output.
+
+## Notes
+
+1. Even in the handler of `fastify.setNotFoundHandler()`, one still needs to set the status code of the reply object via `reply.status(404)` or `reply.status(405)` and so on.
