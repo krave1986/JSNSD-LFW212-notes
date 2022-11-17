@@ -76,7 +76,9 @@ At the beginning of the express part of the tutorial, we registered our first tw
 
 The first one should always be the second-to-last middleware function. Because it will hit by any requests not matching any predefined routes. That would be path unmatched or verb unmatched.
 
-The second one is the last piece of our middlewares. It is special because it has 4 parameters. Express knows it is final error handling middleware based on the number of the function. So Express will pass the error object which we passed to the `next()` function to this special function as the first argument. We can get HTTP status code and error message from this error object. 
+The second one is the last piece of our middlewares. It is special because it has 4 parameters. Express knows it is final error handling middleware based on the number of the arguments of the function. So Express will pass the error object which we passed to the `next()` function to this special function as the first argument. We can get HTTP status code and error message from this error object. 
+
+Only if our code runs smoothly to reach the penultimate middleware function, the error object will be created by `createError()` function. What if an error occurred before `createError()` being called? In that case, our last error-handling middleware will receive an error without the `status` property. So we have to check if `error.status` available and assign `500` in case it is not.
 
 ## Miscellaneous
 

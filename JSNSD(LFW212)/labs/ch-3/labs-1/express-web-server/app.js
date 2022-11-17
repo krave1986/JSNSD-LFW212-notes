@@ -1,14 +1,23 @@
 const express = require('express')
-const { createError } = require("http-errors")
+const createError = require("http-errors")
+const indexRoutes = require('./routes/index')
 
 
 const app = express()
 
+app.use('/', indexRoutes)
+
 app.use((req, res, next) => {
-    debugger
     if (req.method !== 'GET') {
-        res.status(405)
+        next(createError(405))
+    } else {
+        next(createError(404))
     }
+})
+
+app.use((error, req, res, next) => {
+    res.status(error.status || 500)
+    res.send(error.message + "\r\n")
 })
 
 module.exports = app
