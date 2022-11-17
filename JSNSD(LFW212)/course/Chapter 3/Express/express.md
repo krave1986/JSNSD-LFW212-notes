@@ -96,3 +96,11 @@ const server = http.createServer(app)
 server.listen(PORT)
 ```
 
+In fact this file exposes the nature of the express way is still utilize `http` module to create web server.
+
+- #### How to remember the content of www in Chinese?
+  警探，有事儿，有病，env
+
+## Notes
+
+1. We rename the `http-errors` module to `createError` instead of destructuring it.
