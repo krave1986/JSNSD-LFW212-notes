@@ -85,3 +85,9 @@ as you wish | ![](../images/structureOfExpress.png) | ![](../images/structureOfF
 core | express |
 --- | --- |
 everything | `scripts`: `"start": "node ./bin/www"` |
+
+## Serve Static Content
+
+core | express | fastify
+--- | --- | ---
+plain code | | `fastify-static`

@@ -10,3 +10,14 @@ The `'w'` we used in `node -e "fs.openSync('www', 'w')"` is one of the [File sys
 
 > Open file for reading. The file is created (if it does not exist) or truncated (if it exists).
 
+### [fs.unlinkSync(path)](https://nodejs.org/api/fs.html#fsunlinksyncpath)
+
+See unlink
+
+### [fs.rmdirSync(path[, options])](https://nodejs.org/api/fs.html#fsrmdirsyncpath-options)
+
+- Options:
+
+  - `recursive`
+
+  Ture to perform a recursive directory removal.
