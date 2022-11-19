@@ -87,6 +87,27 @@ Every plugins (which means everything in fastify) are called at initialization t
 - `@fastify/static`
   The successor of `fastify-static`. Their APIs and usages seem very similar to me right now.
 
+- `point-of-view`
+
+  It helps at dynamic view rendering.
+
+  - Options:
+
+    - `engine`
+      An **object** to specify render engine. eg. `{handlebars}`.
+      Key is the engine name, value is the engine lib.
+
+    - `root`
+      Where to find views.
+
+    - `layout`
+      Sometimes there should be a layout. eg. `layout.hbs`.
+
+  - Decorations:
+
+    - `reply.view(templateFileName[, optional_template_locals])`
+      `optional_template_locals` is an object whose properties will be available in the handlebars views.
+
 ## Routes
 
 Everything in fastify is a plugin. We distinguish **plugin** and **route** in order to reason about the functionality of the project.
@@ -106,6 +127,13 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
     Its returned value will be automatically processed simlar to Express and sent as the content of HTTP response.
 
     If this handler returns an object, fastify will convert it into a JSON payload.
+
+    - `request`
+
+      #### Properties
+
+      - `request.query`
+      An object contains all query key-value pairs from URL.
 
     - `reply`
 

@@ -91,3 +91,9 @@ everything | `scripts`: `"start": "node ./bin/www"` |
 core | express | fastify
 --- | --- | ---
 plain code | | `fastify-static`
+
+## Dynamic rendering
+
+express | fastify
+--- | ---
+ | point-of-view
