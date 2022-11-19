@@ -69,8 +69,11 @@ Every plugins (which means everything in fastify) are called at initialization t
       root: path.join(__dirname, 'public')
     }
     ```
-
     中文速记：`Autoload` 插件 和 `fastify-static` 的两个指定路径的属性名，正好组成德鲁大叔（`dir` and `root`）。
+
+  - `prefix`
+    By default, `@fastify/static` will try to find file which exactly matches the path with the part of URL behind the first single `/`. Like `/abc/hello.html` in `http://example.org/abc/hello.html`. But if `prefix: /abc/` option is specified, the path to the file will be the part after the specified prefix. So that will be `/hello.html` in `http://example.org/abc/hello.html`.
+
 
   ### Decorations
 
