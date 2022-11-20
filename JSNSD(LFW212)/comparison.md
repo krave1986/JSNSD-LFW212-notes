@@ -97,3 +97,9 @@ plain code | | `fastify-static`
 express | fastify
 --- | ---
  | point-of-view
+
+## Scaffolding tool
+
+express | fastify
+--- | ---
+express-generator | create-fastify

@@ -44,6 +44,24 @@ Configure express servers' behavior.
 
   This version of `use()` will mount routes of `router` on the specified `path`.
 
+- `app.static(path_to_templates)`
+  Specify the path where to find static content.
+
+  - Return value
+    A middleware function.
+
+- `app.set(key, value)`
+  Setup function. The 2 arguments it accepts are key and value.
+
+  - Reserved keys
+
+    - `views`
+      Specify the path where to find views.
+  
+    - `view engine`
+      Specify the view engine. eg. `"hbs"`
+      There is no need to install handlebars because `express-generator` already downloaded `hbs` package for you when you run `express --hbs express-web-server.`
+
 ## Methods
 
 - `express.Router`
@@ -80,6 +98,11 @@ The second one is the last piece of our middlewares. It is special because it ha
 
 Only if our code runs smoothly to reach the penultimate middleware function, the error object will be created by `createError()` function. What if an error occurred before `createError()` being called? In that case, our last error-handling middleware will receive an error without the `status` property. So we have to check if `error.status` available and assign `500` in case it is not.
 
+## CLI
+
+- Specify handlebars as render engine. Notice the double dashes.
+
+  `express --hbs express-web-server`
 ## Miscellaneous
 
 ### The content of bin/www
