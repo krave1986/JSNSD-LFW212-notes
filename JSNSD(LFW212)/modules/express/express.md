@@ -134,3 +134,7 @@ In fact this file exposes the nature of the express way is still utilize `http` 
 ## Notes
 
 1. We rename the `http-errors` module to `createError` instead of destructuring it.
+
+2. Don't forget to end the destination stream (which means `res.end()`) in `stream.finished` because `a.pipe(b, {end: false})` will prevent `b` from being ended.
+
+3. If `stream` module doesn't have `finished` function, use `readable-stream` module to obtain this functionality.

@@ -32,11 +32,11 @@ core | express |
 --- | --- |
 `res.end(string)`| NA |
 
-## Set header
+## Set type
 
 core | express | fastify
 --- | --- | ---
-`res.setHeader('Content-Type', 'application/json')` | | `reply.type('text/html')`
+`res.setHeader('Content-Type', 'application/json')` | `res.type('application/json')` | `reply.type('text/html')`
 
 ## Set status code
 
