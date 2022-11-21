@@ -33,6 +33,11 @@ Configure express servers' behavior.
 
       Express use this method instead of `res.end()` function to perform data sending and connection ending. It is because `res.send()` function will detect Content-Type based on its input, and perform additional operations. For example, `res.send()` will convert object to JSON and set Content-Type as `application/json` .
 
+    - `res.render(template, template_locals_object)`
+
+      Equivalent to `reply.view()` in fastify.
+      There is not need to install other packages which is built into express.
+
     - `next()`
 
       This function is an error-first callback function.
