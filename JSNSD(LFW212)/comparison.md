@@ -36,7 +36,7 @@ core | express |
 
 core | express | fastify
 --- | --- | ---
-`res.setHeader('Content-Type', 'text/html')` | | `reply.type('text/html')`
+`res.setHeader('Content-Type', 'application/json')` | | `reply.type('text/html')`
 
 ## Set status code
 

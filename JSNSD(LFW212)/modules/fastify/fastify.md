@@ -186,3 +186,9 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
    On the other hand, once route handler returns something, fastify will treat anything returned as the response for the request. In our case, the returned value is `undefined` which will cause fastify reply the request with no content but header only.
 
    After that, `reply.sendFile()` will finish reading file and try to write the content of the file into the stream. But guess what, the stream is already closed due to `return undefined`. That's why we will see some error which complains that `"Reply was already sent."`.
+
+3. Remember `'use strict'`.
+
+4. Due to fastify takes care of streams including error-handling, if some error occurs, fastify will handle the error and pass the error to the user directly.
+   For example:
+   ![](../images/exposesError.png)
