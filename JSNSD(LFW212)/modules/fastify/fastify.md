@@ -124,7 +124,7 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
     The handler of the route.
     It is not a plugin.
     It could be both synchronous or asynchronous.
-    Its returned value will be automatically processed simlar to Express and sent as the content of HTTP response.
+    Its returned value will be automatically processed similar to Express and sent as the content of HTTP response.
 
     If this handler returns an object, fastify will convert it into a JSON payload.
 
