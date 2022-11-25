@@ -87,6 +87,20 @@ Every plugins (which means everything in fastify) are called at initialization t
 - `@fastify/static`
   The successor of `fastify-static`. Their APIs and usages seem very similar to me right now.
 
+- `@fastify/sensible`
+  Provide helper functions for HTTP status codes and error messages.
+
+  ### Options
+  - `errorHandler`
+    It is better to set it as `true` for the public facing services in production mode.
+    It will provide less detailed info to the public.
+
+  ### Decorations
+
+  - `reply.notFound()`
+    It sets 404 status code and generate **JSON** output to describe this error.
+
+
 - `point-of-view`
 
   It helps at dynamic view rendering.
@@ -141,6 +155,8 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
 
       - `reply.send()`
         Instead of return something within the route handler, you can use this method to send response. For example: `reply.send({root: true})`.
+
+        If an instance of `Error` is passed to this function, fastify will generate a *500* response with the error message.
 
 - `fastify.setNotFoundHandler((request, reply)=>{})`
 ## Files
