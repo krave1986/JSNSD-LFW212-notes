@@ -3,7 +3,7 @@
 const { bicycle } = require('../../model')
 
 module.exports = async (fatify, opts) => {
-    fatify.get('/:id', (request, reply) => {
+    fatify.get('/:id', async (request, reply) => {
         const { id } = request.params
         bicycle.read(id, (err, result) => {
             if (err) {
@@ -16,5 +16,7 @@ module.exports = async (fatify, opts) => {
                 reply.send(result)
             }
         })
+        // Prevent the implicit return value finishes the response too early.
+        await reply
     })
 }

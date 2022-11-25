@@ -142,6 +142,14 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
 
     If this handler returns an object, fastify will convert it into a JSON payload.
 
+    Unless the handler returns a `undefined`, otherwise fastify will consider anything returned by the handler as the response to the request. This means only synchronous handler can fit return a `undefined`. Becuase any thing an async function returns is a promise which is not `undefined`. So for async handler, make sure the expected response is returned by the handler or pass it to `reply.send()` before handler returns.
+
+    The solution for combination of async route handler and callback-based API is to await replay at the end of the handler:
+
+    ```javascript
+    await reply
+    ```
+
     - `request`
 
       #### Properties
@@ -208,3 +216,9 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
 4. Due to fastify takes care of streams including error-handling, if some error occurs, fastify will handle the error and pass the error to the user directly.
    For example:
    ![](../images/exposesError.png)
+
+5. Use this to ensure aysnc route handler returns too early:
+
+   ```javascript
+   await reply
+   ```
