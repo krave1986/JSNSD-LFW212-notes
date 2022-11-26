@@ -100,6 +100,8 @@ Every plugins (which means everything in fastify) are called at initialization t
   - `reply.notFound()`
     It sets 404 status code and generate **JSON** output to describe this error.
 
+  - `fastify.httpErrors.notFound()`
+    Same as `reply.notFound()`.
 
 - `point-of-view`
 
@@ -125,6 +127,8 @@ Every plugins (which means everything in fastify) are called at initialization t
 ## Routes
 
 Everything in fastify is a plugin. We distinguish **plugin** and **route** in order to reason about the functionality of the project.
+
+Any error throw inside a route handler which is not recognized by fastify will cause a 505 error as the response to the request.
 
 ## `fastify` instance
 
@@ -167,6 +171,9 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
         If an instance of `Error` is passed to this function, fastify will generate a *500* response with the error message.
 
 - `fastify.setNotFoundHandler((request, reply)=>{})`
+
+- `fastify.httpErros.notFound()`
+  Same as the `reply.notFound()` decorated by `@fastify/sensible` to create a 404 error.
 ## Files
 
 - app.js
@@ -222,3 +229,5 @@ Everything in fastify is a plugin. We distinguish **plugin** and **route** in or
    ```javascript
    await reply
    ```
+
+6. Fastify will also throw 404 when facing non-registered `method` instead of 405 by default.
