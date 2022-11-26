@@ -18,3 +18,8 @@
    Set params in route path when register route.
    Then access `request.params` when request being received to get the params from the request.
 
+4. How to create an error?
+
+   ```javascript
+   Error(errorMessage)
+   ```

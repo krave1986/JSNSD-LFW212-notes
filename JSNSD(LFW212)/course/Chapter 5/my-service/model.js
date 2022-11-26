@@ -15,11 +15,12 @@ function bicycleModel() {
     }
 
     function read(id, cb) {
-        if (!(db.hasOwnProperty(id))) {
-            const err = Error('not found')
-            setImmediate(() => { cb(err) })
-            return
-        }
-        setImmediate(() => { cb(null, db[id]) })
+        setImmediate(() => { cb(Error("my fault")) })
+        // if (!(db.hasOwnProperty(id))) {
+        //     const err = Error('not found')
+        //     setImmediate(() => { cb(err) })
+        //     return
+        // }
+        // setImmediate(() => { cb(null, db[id]) })
     }
 }

@@ -231,3 +231,7 @@ Any error throw inside a route handler which is not recognized by fastify will c
    ```
 
 6. Fastify will also throw 404 when facing non-registered `method` instead of 405 by default.
+
+7. How to deal with the error reported from with a promisified function?
+
+   Use `try catch` block to surround the promisified function to catch the error and deal with responding logic inside the `catch{}` block. A common way is to re-throw an error inside the async handler and let fastify to deal with the rest of the work automatically.
