@@ -138,3 +138,27 @@ In fact this file exposes the nature of the express way is still utilize `http` 
 2. Don't forget to end the destination stream (which means `res.end()`) in `stream.finished` because `a.pipe(b, {end: false})` will prevent `b` from being ended.
 
 3. If `stream` module doesn't have `finished` function, use `readable-stream` module to obtain this functionality.
+
+4. Remember the last two middleware functions we defined at the very beginning of the tutorial? The second last middleware will handle all requests which failed to match any predefined routes. And it will consider the route for the request is `not found`. So if we want to respond a request with a `not found` error within a route handler, we can just invoke `next()` without any parameters. Then the request will hit this handler and a 404 error will be created for us.
+
+5. The default output about error by express is in HTML format instead of JSON.
+   We can use `res.end()` to replace `res.render()` in the last error handling middleware in `app.js`.
+
+   ```javascript
+   app.use(function (err, req, res, next) {
+     res.status(err.status || 500);
+     res.send({
+       type: 'error',
+       status: err.status,
+       message: err.message,
+       stack: req.app.get('env') === 'development' ? err.stack : undefined
+     })
+   });
+   ```
+   We need 4 elements:
+   1. type
+   2. status
+   3. message
+   4. stack
+
+   
