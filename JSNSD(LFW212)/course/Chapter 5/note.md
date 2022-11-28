@@ -44,6 +44,10 @@ body | data
 header | metadata
 status code | outcome
 
+## Explanation of the code to test service
+![](images/explanationOfTestCommand.png)
+
+Note that `request.end()` function only accepts string, Buffer, Uint8Array. So if you want to send an object, sent JSON of that object instead.
 
 ## Keys
 
