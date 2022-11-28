@@ -44,6 +44,7 @@ const stream = require("stream")
       It defines the encoding for data read from the readable stream.
     - Return value
       `this`
+    
     By default, no encoding is assigned and stream data will be returned as `Buffer` objects.
     Setting an encoding causes the stream data to be returned as trings of the specified encoding rather than as `Buffer` objects.
     `Readable` stream will properly handle multi-byte characters delivered through the stream that would otherwise become improperly decoded if simply pulled from the stream as `Buffer` objects.
