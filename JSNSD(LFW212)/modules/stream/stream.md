@@ -28,13 +28,16 @@ const stream = require("stream")
 
 - [`stream.Readable`](https://nodejs.org/api/stream.html#class-streamreadable)
 
-  - [`readable.pipe(destination[,options])`](https://nodejs.org/api/stream.html#readablepipedestination-options)  
+  - [stream.Readable.from(iterable[, options])](https://nodejs.org/api/stream.html#streamreadablefromiterable-options)
 
-    - Return value
+  - ##### Readable instance
+    - ###### methods
 
-      The `destination` writable stream.
+      - [`readable.pipe(destination[,options])`](https://nodejs.org/api/stream.html#readablepipedestination-options)  
 
-  ##### [stream.Readable.from(iterable[, options])](https://nodejs.org/api/stream.html#streamreadablefromiterable-options)
+        - Return value
+          The `destination` writable stream.
+
 
 ## [Implementing a transform stream](https://nodejs.org/api/stream.html#implementing-a-transform-stream)
 

@@ -42,7 +42,9 @@ core | express | fastify
 
 core | express | fastify
 --- | --- | ---
-`res.statusCode = 405` | `res.status(code_number)` | `reply.status(code_number)`
+`res.statusCode = 405` | `res.status(code_number)` | `reply.status(code_number)` or `reply.code(code_number)`
+
+In fastify, `reply.status()` is an alias for `reply.code()`
 
 ## Get request verb
 

@@ -124,6 +124,12 @@ Every plugins (which means everything in fastify) are called at initialization t
     - `reply.view(templateFileName[, optional_template_locals])`
       `optional_template_locals` is an object whose properties will be available in the handlebars views.
 
+- `fastify-multipart`
+  Being used to support `multipart/formdata` requests.
+
+- `fastify-formbody`
+  Being used to support `application/x-www-form-urlencoded` POST requests.
+
 ## Routes
 
 Everything in fastify is a plugin. We distinguish **plugin** and **route** in order to reason about the functionality of the project.
@@ -235,3 +241,5 @@ Any error throw inside a route handler which is not recognized by fastify will c
 7. How to deal with the error reported from with a promisified function?
 
    Use `try catch` block to surround the promisified function to catch the error and deal with responding logic inside the `catch{}` block. A common way is to re-throw an error inside the async handler and let fastify to deal with the rest of the work automatically.
+
+8. Let all unexpected errors to be throw from within route handler. Do not `try/catch` them if you are sure there will not be any expected errors there.
