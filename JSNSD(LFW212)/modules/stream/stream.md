@@ -36,10 +36,26 @@ const stream = require("stream")
   ###### methods
 
   - [`readable.pipe(destination[,options])`](https://nodejs.org/api/streahtml#readablepipedestination-options)  
-
     - Return value
       The `destination` writable stream.
 
+  - [`readable.setEncoding(encoding)`](https://nodejs.org/api/stream.html#readablesetencodingencoding)
+    - `encoding`
+      It defines the encoding for data read from the readable stream.
+    - Return value
+      `this`
+    By default, no encoding is assigned and stream data will be returned as `Buffer` objects.
+    Setting an encoding causes the stream data to be returned as trings of the specified encoding rather than as `Buffer` objects.
+    `Readable` stream will properly handle multi-byte characters delivered through the stream that would otherwise become improperly decoded if simply pulled from the stream as `Buffer` objects.
+    
+    ```javascript
+    const readable = getReadableStreamSomehow();
+    readable.setEncoding('utf8');
+    readable.on('data', (chunk) => {
+      assert.equal(typeof chunk, 'string');
+      console.log('Got %d characters of string data:', chunk.length);
+    });
+    ```
 
 ## [Implementing a transform stream](https://nodejs.org/api/stream.html#implementing-a-transform-stream)
 
