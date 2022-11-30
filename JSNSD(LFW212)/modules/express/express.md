@@ -38,6 +38,15 @@ Configure express servers' behavior.
       Equivalent to `reply.view()` in fastify.
       There is not need to install other packages which is built into express.
 
+    - [`res.status(code)`](https://expressjs.com/en/api.html#res.status)
+      Alias for Node's `response.statusCode`.
+      It sets HTTP status for the response.
+      It is chainable so it returns `this` response object.
+
+    - [`res.end()`](https://expressjs.com/en/api.html#res.status)
+      It is from Node core.
+      Although it can accept `data` and `encoding` as parameters, express recommends to use this function just to close the connection. Use `res.send()` and so on to write content to the response.
+
     - `next()`
 
       This function is an error-first callback function.
@@ -161,4 +170,6 @@ In fact this file exposes the nature of the express way is still utilize `http` 
    3. message
    4. stack
 
-6. If you use `res.send()` to respond to a HTTP request, you **MUST** **ALWAYS** remember that the default status code is **ALWAYS** 200 without calling **res.status(404)**. fastify doesn't need to take care of this but express **DO**! Always make sure to call `res.status()` if you don not intend to respond with `200` status code.   
+6. If you use `res.send()` to respond to a HTTP request, you **MUST** **ALWAYS** remember that the default status code is **ALWAYS** 200 without calling **res.status(404)**. fastify doesn't need to take care of this but express **DO**! Always make sure to call `res.status()` if you don not intend to respond with `200` status code.
+
+7. Never use async route handler in express project.
