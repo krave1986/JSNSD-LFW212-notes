@@ -243,3 +243,7 @@ Any error throw inside a route handler which is not recognized by fastify will c
    Use `try catch` block to surround the promisified function to catch the error and deal with responding logic inside the `catch{}` block. A common way is to re-throw an error inside the async handler and let fastify to deal with the rest of the work automatically.
 
 8. Let all unexpected errors to be throw from within route handler. Do not `try/catch` them if you are sure there will not be any expected errors there.
+
+9. In a synchronous route handler, if there are any asynchronous operations, never return anything in that handler. That would result the response being closed too early. If you relly want to return anything not related to the logic, just return `undefined`.
+
+10. In a synchronous route handler, if there is an error, pass the error to `reply.send()` function. Throw the error in a synchronous route handler will not close the connection or send the error to the client. The client will just wait to the end of the world.
