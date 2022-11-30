@@ -247,3 +247,7 @@ Any error throw inside a route handler which is not recognized by fastify will c
 9. In a synchronous route handler, if there are any asynchronous operations, never return anything in that handler. That would result the response being closed too early. If you relly want to return anything not related to the logic, just return `undefined`.
 
 10. In a synchronous route handler, if there is an error, pass the error to `reply.send()` function. Throw the error in a synchronous route handler will not close the connection or send the error to the client. The client will just wait to the end of the world.
+
+11. Use `reply.notFound()` to create 404 error in synchronous handlers. `reply.send(fastify.httpErrors.notFound())` does not work.
+
+12. For `204` status code response could be empty. Just call `reply.send()` without parameters is fine.
