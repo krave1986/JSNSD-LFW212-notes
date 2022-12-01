@@ -257,3 +257,5 @@ Any error throw inside a route handler which is not recognized by fastify will c
 14. How to responds with a 400 status code?
 
     `throw fastify.httpErrors.badRequest()` or `reply.badRequest()`
+
+15. Never forget to call `.json()` at the end of `got()` request. `got()` only returns a stream.
