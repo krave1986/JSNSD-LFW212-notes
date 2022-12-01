@@ -23,3 +23,7 @@
    ```javascript
    Error(errorMessage)
    ```
+
+5. How to check the status code of upstream service error in `got`?
+
+   `err.response.statusCode`
