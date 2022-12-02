@@ -65,6 +65,12 @@ Use `schema` option when declaring routes to do validation.
 
 ## [Shared schema](https://www.fastify.io/docs/latest/Reference/Validation-and-Serialization/#validator-compiler)
 
+## Fluent schema
+```javascript
+S.object().prop('brand', S.string().required()).prop('color', S.string().required()).additionalProperties(false)
+```
+`S` is the `fluent-schema` instance. See [here](https://github.com/fastify/fluent-json-schema)
+
 ## Notes
 
 1. `schema.body.type: object` will usually be the case, even if the service accepts alternative mime-types like multipart. This is because the schema is applied (conceptually) to the body after it has been parsed into a JavaScript object.
