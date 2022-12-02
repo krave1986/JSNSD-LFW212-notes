@@ -130,11 +130,46 @@ Every plugins (which means everything in fastify) are called at initialization t
 - `fastify-formbody`
   Being used to support `application/x-www-form-urlencoded` POST requests.
 
+- `fastify-reply-from`
+  Turn fastify into proxy.
+
+  - Options:
+    
+    - `errorHandler`
+
+    - `base`
+      Set the specific upstream server to proxy to.
+      With this option being set, `reply.from()` can accept a path instead of a full URL.
+      This can be useful for mapping different endpoints to a specific upstream service.
+      
 ## Routes
 
 Everything in fastify is a plugin. We distinguish **plugin** and **route** in order to reason about the functionality of the project.
 
 Any error throw inside a route handler which is not recognized by fastify will cause a 505 error as the response to the request.
+
+## Tools
+
+- `fastify-plugin`
+
+  - Usage
+    ```javascript
+    const fp = require("fastify-plugin")
+    module.exports = fp(async function (fastify, opts) {
+      // ...
+    })
+    ```
+    It makes the exported plugin application-wide available.
+
+  - Decorations
+
+    - `reply.from(url[, optionsObject])`
+      Reply http request with the response from the `url`.
+
+      - `optionsObject`
+
+        `onResponse(request, reply, res){}`
+        This option will tell fastify not to end connection for this request automatically. Let author to end the connection manually. For example: `reply.send()`. The `res` is the response from the upstream service. It is the same `httpIncomingMessage` passed to the callback of `http.request()`
 
 ## `fastify` instance
 

@@ -27,3 +27,13 @@
 5. How to check the status code of upstream service error in `got`?
 
    `err.response.statusCode`
+
+6. How to validate a string is an illegal URL?
+
+   ```javascript
+   try {
+      new URL(urlString)
+   } catch (err) {
+      // It is not an illegal url if an error occurs.
+   }
+   ```
