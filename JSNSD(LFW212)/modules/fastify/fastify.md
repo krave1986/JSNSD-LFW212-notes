@@ -141,7 +141,35 @@ Every plugins (which means everything in fastify) are called at initialization t
       Set the specific upstream server to proxy to.
       With this option being set, `reply.from()` can accept a path instead of a full URL.
       This can be useful for mapping different endpoints to a specific upstream service.
-      
+
+- `fastify-http-proxy`
+  It can only cooperate with fastify 3.x.x version.
+
+- `@fastify/http-proxy@8`
+  It can cooperate with fastify 4.x.x version. The usage is the same as old version.
+  It uses `fastify-reply-from` under the hood.
+
+  - Usage
+    ```javascript
+    const proxy = require("@fastify/http-proxy")
+
+    fastify.register(proxy, {
+      upstream: 'https://news.ycombinator.com/',
+      async preHandler(request, reply) {
+        if (request.query.token !== 'abc') {
+          throw fastify.httpErrors.unauthorized()
+        }
+      }
+    })
+    ```
+  - options
+
+    - `upstream`
+      It defines the upstream service the proxy should forward to.
+
+    - `preHandler(request, reply)`
+      It will hanlder all the requests first to see if proxy should continue the request. It could be an async method so that it returns a promise. If you throw inside the method, the promise rejects and then the request is terminated.
+        
 ## Routes
 
 Everything in fastify is a plugin. We distinguish **plugin** and **route** in order to reason about the functionality of the project.
