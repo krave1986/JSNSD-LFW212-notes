@@ -322,3 +322,7 @@ Any error throw inside a route handler which is not recognized by fastify will c
     `throw fastify.httpErrors.badRequest()` or `reply.badRequest()`
 
 15. Never forget to call `.json()` at the end of `got()` request. `got()` only returns a stream.
+
+16. Search `routes options` on fastify site to find out how to set validations in the route option.
+
+17. Don't forget the **FIRST** property of the schema is **schema** !
