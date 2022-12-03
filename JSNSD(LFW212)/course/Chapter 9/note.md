@@ -71,6 +71,27 @@ S.object().prop('brand', S.string().required()).prop('color', S.string().require
 ```
 `S` is the `fluent-schema` instance. See [here](https://github.com/fastify/fluent-json-schema)
 
+## Route Validation with Express
+
+Manual validation...
+
+### Why the `hasOwnProperty` utility function?
+
+It is true that `o.hasOwnProperty('foo)` can check whether `o` has property named as `'foo'`. But due to it is very common to have `hasOwnProperty` function all over various code bases. Someone may overwrite this function. So in order to keep safe, we implemented the `hasOwnProperty` function.
+
+### Why not use `p in o`?
+
+This approach will check properties on prototype chain.
+For example, `'toString' in {}` will return true even it is an empty object.
+
+### Why `validateData` function returns an object?
+This brings `additionalProperties: false` in fastify into express to strip off any extra properties.
+
+### isIdValid is too old
+We can replace `Math.pow(2, 53) - 1` with `Number.MAX_SAFE_INTEGER`.
+
+We can replace the whole function with `Number.isSafeInteger(Number(n))`
+
 ## Notes
 
 1. `schema.body.type: object` will usually be the case, even if the service accepts alternative mime-types like multipart. This is because the schema is applied (conceptually) to the body after it has been parsed into a JavaScript object.

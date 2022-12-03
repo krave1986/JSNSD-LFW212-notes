@@ -173,3 +173,5 @@ In fact this file exposes the nature of the express way is still utilize `http` 
 6. If you use `res.send()` to respond to a HTTP request, you **MUST** **ALWAYS** remember that the default status code is **ALWAYS** 200 without calling **res.status(404)**. fastify doesn't need to take care of this but express **DO**! Always make sure to call `res.status()` if you don not intend to respond with `200` status code.
 
 7. Never use async route handler in express project.
+
+8. If the `err` passed to the final error handleing middleware without `status` property, it will cause `500` error.
