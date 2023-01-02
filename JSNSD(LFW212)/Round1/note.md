@@ -25,4 +25,24 @@
    const app = express()
    module.exports = app
    ```
+6. 
+   ```javascript
+   const { Router } = require('express')
+   const router = Router()
+   module.exports = router
+   ```
+
+7. Where is the `www` file?
+   `./bin/www`
+
+8. How to use `http-errors`?
+
+   ```javascript
+   const createError = require("http-errors")
+   const err = createError(404)
+   err.message
+   err.status
+   ```
+
+9. `req` is before `res`
 
