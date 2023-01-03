@@ -52,3 +52,19 @@
 
 12. `fs.rmSync()`
 
+13. In app.js, `fastify.setNotFoundHandler((request, reply) => {})`
+
+14. `npm install -g express-generator`
+
+15. `express --hbs express-web-server` note the `--hbs`
+
+16. 
+    ```javascript
+    // view engine setup
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'hbs');
+    ```
+
+17. `res.render('templateName', locals)`
+
+
