@@ -47,3 +47,8 @@
 9. `req` is before `res`
 
 10. The error handling middleware in express will not be hit if there is no errors passed to `next()` in the preceeding middlewares.
+
+11. `fs.copyFileSync('source', 'target')`
+
+12. `fs.rmSync()`
+
