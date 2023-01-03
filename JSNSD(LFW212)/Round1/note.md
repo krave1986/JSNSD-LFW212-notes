@@ -92,3 +92,7 @@
 
 23. Use `reply.send(err)` in callback based APIs in fastify! Do not throw in callbacks, fastify will hang!
 
+24. `const isJSON = request.headers['content-type'] === 'application/json'`
+
+25. `req.end(JSON.stringify(payload))`
+
