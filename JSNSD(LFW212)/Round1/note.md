@@ -90,3 +90,5 @@
 
 22. `npm init fastify -- --integrate`
 
+23. Use `reply.send(err)` in callback based APIs in fastify! Do not throw in callbacks, fastify will hang!
+

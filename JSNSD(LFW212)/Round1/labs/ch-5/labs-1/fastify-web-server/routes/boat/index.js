@@ -11,7 +11,7 @@ module.exports = async function (fastify, opts) {
                 if (err.message === 'not found') {
                     reply.notFound()
                 } else {
-                    throw err
+                    reply.send(err)
                 }
             } else {
                 reply.send(theBoat)

@@ -6,9 +6,6 @@ const AutoLoad = require('@fastify/autoload')
 module.exports = async function (fastify, opts) {
   // Place here your custom code!
 
-  // fastify.setNotFoundHandler((request, reply) => {
-  //   return reply.notFound()
-  // })
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins
