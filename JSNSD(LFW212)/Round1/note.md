@@ -71,3 +71,19 @@
 
 19. Explicit `return` in route handler!!!
 
+20. `res.type('text/html')`
+
+21. Pipe stream to `res` in express:
+    ```javascript
+    const finished = require("stream").finished;
+
+    stream.pipe(res, { end: false })
+
+    finished(stream, (err) => {
+        if (err) {
+            next(err)
+            return
+        }
+        res.end()
+    })
+    ```
