@@ -87,3 +87,6 @@
         res.end()
     })
     ```
+
+22. `npm init fastify -- --integrate`
+
