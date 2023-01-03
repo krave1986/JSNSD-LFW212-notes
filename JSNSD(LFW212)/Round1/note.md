@@ -67,4 +67,7 @@
 
 17. `res.render('templateName', locals)`
 
+18. Dependencies for fastify are `point-of-view` and `handlebars`
+
+19. Explicit `return` in route handler!!!
 
