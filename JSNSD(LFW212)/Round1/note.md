@@ -96,3 +96,37 @@
 
 25. `req.end(JSON.stringify(payload))`
 
+26. `reply.send(fastify.httpErrors.notAcceptable())`
+
+27. `got@11`
+
+28. 
+    ```javascript
+    got(path, {
+      retry: {
+        calculateDelay: () => {
+          return delay
+        }
+      }
+    }).json()
+    ```
+29. 
+    ```javascript
+    try {
+      new URL(url)
+    } catch (err) {
+      throw badRequest()
+    }
+    ```
+   
+30. `return reply.from(url)`
+
+31. 
+    ```javascript
+    const proxy = require("@fastify/http-proxy")
+
+    fastify.register(proxy, {
+      upstream: "https://jsonplaceholder.typicode.com/"
+    })
+    ```
+    
