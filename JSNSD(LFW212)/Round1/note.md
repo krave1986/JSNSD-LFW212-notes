@@ -129,4 +129,7 @@
       upstream: "https://jsonplaceholder.typicode.com/"
     })
     ```
-    
+
+32. `res.sned(obj)` will set header `Content-Type: application/json` automatically in express.
+
+33. For `204` status code response could be empty. Just call `reply.send()` without parameters is fine.
