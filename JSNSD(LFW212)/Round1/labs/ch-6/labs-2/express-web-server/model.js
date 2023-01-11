@@ -59,10 +59,7 @@
     }
   
     function del (id, cb) {
-      if (id === '821e') {
-        setImmediate(() => cb(Error('unknown')))
-        return
-      }
+
       if (!(db.hasOwnProperty(id))) {
         const err = Error('not found')
         err.code = 'E_NOT_FOUND'
