@@ -1,0 +1,15 @@
+{
+  "name": "test-fixed-got",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@krave/fixed-got": "^0.0.1"
+  }
+}

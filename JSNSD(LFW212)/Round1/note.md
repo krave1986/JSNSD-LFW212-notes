@@ -133,3 +133,10 @@
 32. `res.sned(obj)` will set header `Content-Type: application/json` automatically in express.
 
 33. For `204` status code response could be empty. Just call `reply.send()` without parameters is fine.
+
+34. `calculateDelay({attemptCount, retryOptions, error, computedValue, retryAfter}) => {}` function of `retry` option of `got` is the core of retry machanism. If only this function does not return **non-zero** value, the retry will always continue even `limit` being set as `0`!
+
+35. Always remember to return `0` from within the `calculateDelay` function in some conditions! Otherwise it will loop to the end of the world.
+
+36. Use `/^[1-9]\d*$/.test(id)` to test if a string is integer or not.
+
