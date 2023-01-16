@@ -2,10 +2,11 @@
 
 const path = require('path')
 const AutoLoad = require('@fastify/autoload')
+const replyFrom = require("@fastify/reply-from")
 
 module.exports = async function (fastify, opts) {
   // Place here your custom code!
-
+  fastify.register(replyFrom)
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins

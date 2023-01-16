@@ -140,3 +140,26 @@
 
 36. Use `/^[1-9]\d*$/.test(id)` to test if a string is integer or not.
 
+37. How to validate a string is an illegal URL?
+
+    ```javascript
+    try {
+       new URL(urlString)
+    } catch (err) {
+       // It is not an illegal url if an error occurs.
+    }
+    ```
+
+38. How to register `fastify-reply-from`?
+
+    ```javascript
+    'use strict'
+
+    const fp = require('fastify-plugin')
+    
+    module.exports = fp(async function (fastify, opts) {
+        fastify.register(require("fastify-reply-from"), {
+            errorHandler: false
+        })
+    })
+    ```

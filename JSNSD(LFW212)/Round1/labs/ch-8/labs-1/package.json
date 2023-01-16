@@ -6,5 +6,8 @@
     "start": "echo \"Error: start script not specified\" && exit 1"
   },
   "keywords": [],
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fastify/reply-from": "^8.3.1"
+  }
 }
