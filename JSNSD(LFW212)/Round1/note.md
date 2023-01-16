@@ -163,3 +163,15 @@
         })
     })
     ```
+39. Deny proxy service when not authorized:
+
+    ```javascript
+    fastify.register(require('@fastify/http-proxy'), {
+        upstream: 'https://jsonplaceholder.typicode.com',
+        async preHandler(request, reply) {
+            if (request.query?.token !== 'abc') {
+                return reply.unauthorized()
+            }
+        }
+    })
+    ```
