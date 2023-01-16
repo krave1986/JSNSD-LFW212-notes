@@ -6,7 +6,8 @@ const { PORT = 3000 } = process.env
 
 router.get('/', (req, res) => {
   setTimeout(() => {
-    res.send((req.query.un || '').toUpperCase())
+    const theString = Array.isArray(req.query.un) ? req.query.un.join() : req.query.un
+    res.send((theString || '').toUpperCase())
   }, 1000)
 })
 
