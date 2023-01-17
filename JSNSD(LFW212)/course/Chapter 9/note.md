@@ -2,14 +2,14 @@
 
 ## Avoiding Parameter Pollution Attacks (1)
 
-Service crashes because unhandled exception
+Service crashes because unhandled exception.
 Service slows down becuase an exception is generically handled and then caused error handling overhead. If the ammount of the requests is very big, your service will be very slow.
 
 ### Step 1: How query-string parsing works?
 
 `name=bob` in ` ht‌tp://example.com/?name=bob`
 
-It will be parsed as `{name: 'bob}`
+It will be parsed as `{name: 'bob'}`
 
 #### Array-like query strings
 

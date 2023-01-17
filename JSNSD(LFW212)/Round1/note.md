@@ -175,3 +175,8 @@
         }
     })
     ```
+
+40. So as to `shcema` in fastify:
+    400 Bad Request for request and 500 Server Error for response.
+
+41. Never forget the top level property of schema is `schema`!
