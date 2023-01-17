@@ -119,7 +119,9 @@
     }
     ```
    
-30. `return reply.from(url)`
+30. ```javascript
+    return reply.from(url)
+    ```
 
 31. 
     ```javascript
