@@ -315,7 +315,7 @@ Any error throw inside a route handler which is not recognized by fastify will c
 
 12. For `204` status code response could be empty. Just call `reply.send()` without parameters is fine.
 
-13. `got` will add `response` property to error project if a request failed based on an upstream response. If `got` throw an error without `response` property, it means it didn't recieve a response.
+13. `got` will add `response` property to error object if a request failed based on an upstream response. If `got` throw an error without `response` property, it means it didn't recieve a response.
 
 14. How to responds with a 400 status code?
 
