@@ -1,6 +1,6 @@
 # Notes
 
-1. Remember the `pahname`!
+1. Remember the `pathname`!
    ```javascript
    const { pathname } = url.parse(req.url)
    ```
