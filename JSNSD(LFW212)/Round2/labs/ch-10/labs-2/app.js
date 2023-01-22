@@ -5,7 +5,11 @@ const AutoLoad = require('fastify-autoload')
 
 module.exports = async function (fastify, opts) {
   // Place here your custom code!
-
+  fastify.addHook('onRequest', async (request, reply) => {
+    if (request.ip === '211.133.33.113') {
+      return reply.forbidden()
+    }
+  })
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins
