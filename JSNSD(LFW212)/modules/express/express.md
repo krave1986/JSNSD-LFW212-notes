@@ -58,12 +58,6 @@ Configure express servers' behavior.
 
   This version of `use()` will mount routes of `router` on the specified `path`.
 
-- `app.static(path_to_templates)`
-  Specify the path where to find static content.
-
-  - Return value
-    A middleware function.
-
 - `app.set(key, value)`
   Setup function. The 2 arguments it accepts are key and value.
 
@@ -77,6 +71,12 @@ Configure express servers' behavior.
       There is no need to install handlebars because `express-generator` already downloaded `hbs` package for you when you run `express --hbs express-web-server.`
 
 ## Methods
+
+- `express.static(path_to_templates)`
+  Specify the path where to find static content.
+
+  - Return value
+    A middleware function.
 
 - `express.Router`
 
