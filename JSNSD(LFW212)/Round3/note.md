@@ -23,3 +23,5 @@
    ).end(JSON.stringify({}))
    ```
 2. Make sure to pass an object to `res.send()` to implicitly add header `content-type: 'application/json'`. Otherwise the response header will end up with other content type.
+
+3. Use `additionalProperties: false` to strip out unnecessary properties.

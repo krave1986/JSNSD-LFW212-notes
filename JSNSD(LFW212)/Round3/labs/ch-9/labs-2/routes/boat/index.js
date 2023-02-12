@@ -9,7 +9,29 @@ const del = promisify(boat.del)
 module.exports = async (fastify, opts) => {
   const { notFound } = fastify.httpErrors
 
-  fastify.post('/', async (request, reply) => {
+  fastify.post('/', {
+    schema: {
+      body: {
+        type: 'object',
+        required: ['data'],
+        properties: {
+          data: {
+            type: 'object',
+            additionalProperties: false,
+            required: ['brand', 'color'],
+            properties: {
+              brand: {
+                type: 'string'
+              },
+              color: {
+                type: 'string'
+              }
+            }
+          }
+        }
+      }
+    }
+  }, async (request, reply) => {
     const { data } = request.body
     const id = uid()
     await create(id, data)
@@ -30,9 +52,9 @@ module.exports = async (fastify, opts) => {
 
   fastify.get('/:id', async (request, reply) => {
     const { id } = request.params
-    try { 
+    try {
       return await read(id)
-    } catch (err) { 
+    } catch (err) {
       if (err.message === 'not found') throw notFound()
       throw err
     }
